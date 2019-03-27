@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TopColleguesBackApp",
+            "request": "launch",
+            "mainClass": "dev.top.TopColleguesBackApp",
+            "projectName": "top-collegues-back"
+        }
+    ]
+}
