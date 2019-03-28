@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
@@ -21,7 +22,10 @@ public interface CollegueRepo extends JpaRepository<Collegue, Long> {
 
 	public Optional<Collegue> findById(Long id);
 	
+	public Optional<Collegue> findByPseudo(String pseudo);
+
 	public List<Collegue> findAll();
+
 
 }
 
