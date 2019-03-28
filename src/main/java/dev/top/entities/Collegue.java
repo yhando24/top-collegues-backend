@@ -15,18 +15,18 @@ public class Collegue {
     @JsonIgnore
     private Integer id;
 
+    private String pseudo;
     private Integer score;
 
-    private String photo;
+    private String photoUrl;
 
-    private String pseudo;
 
 
     public Collegue(Integer id, Integer score, String photo, String pseudo) {
         
         this.id = id;
         this.score = score;
-        this.photo = photo;
+        this.photoUrl = photo;
         this.pseudo = pseudo;    
         
        }
@@ -64,15 +64,15 @@ public class Collegue {
     /**
      * @return the photo
      */
-    public String getPhoto() {
-        return photo;
+    public String getphotoUrl() {
+        return photoUrl;
     }
 
     /**
      * @param photo the photo to set
      */
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setphotoUrl(String photo) {
+        this.photoUrl = photo;
     }
 
     /**

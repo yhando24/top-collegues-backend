@@ -69,7 +69,7 @@
 			<id>postgresql</id>
 
 	<!-- 		here for online -->
-					<activation>
+				<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<dependencies>
@@ -88,7 +88,7 @@
 		<profile>
 			<id>h2</id>
 
-	
+		
 <!-- here for dev -->
 			<dependencies>
 				<dependency>

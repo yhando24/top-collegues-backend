@@ -26,9 +26,8 @@ public class StartupDataInit {
         this.versionRepo.save(new Version("v1"));
         this.versionRepo.save(new Version("v2"));
         this.versionRepo.save(new Version("v3"));
-        this.versionRepo.save(new Version("v4"));
-
-        this.collegueRepo.save(new Collegue(1, 50, "50", "AIMER"));
+        this.versionRepo.save(new Version("v5"));
+        this.collegueRepo.save(new Collegue(1,200,"https://media.licdn.com/dms/image/C4E03AQFlHrZpdWLrCg/profile-displayphoto-shrink_200_200/0?e=1559174400&v=beta&t=x_w8Y3288kZDjGLS-Yhs9TTQpy25iOBynGdwhZga69A","youcef"));
         this.collegueRepo.save(new Collegue(58, 10, "plop", "salut"));
 
     }
