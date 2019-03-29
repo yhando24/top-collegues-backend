@@ -46,14 +46,22 @@ public class ColleguesController {
     public void  AjoutCollegue(@RequestBody CollegueDTO c)  {
    
     	System.out.println(c.getNom());
-    	Collegue col;
+    	boolean exist = true;
+    	Collegue col = new Collegue();
     	try {
     		col = collegueService.findByPseudo(c.getNom());
-    	}catch( CollegueException e) {
-    		System.out.println(e.getMessage());
-    		collegueService.save(utils.recupDonne(c));
+    	}catch(CollegueException e) {
+    		exist = false;
     	}
-    
+   
+    	if(!exist) {
+    		
+    		collegueService.save(utils.recupDonne(c));
+    		
+    	}else {
+    	 throw new CollegueException("Une personne avec ce pseudo existe deja");
+    	}
+    	
     }
     	    		
 }

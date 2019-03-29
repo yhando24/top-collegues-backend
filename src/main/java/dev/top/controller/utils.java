@@ -18,8 +18,8 @@ public class utils {
  	    throw new CollegueException("Personne ne possede ce matricule");
  	    }else {
  	    	   
- 	    	collegueToAdd.setPseudo(result[0].getNom());
-
+ 	    	collegueToAdd.setPseudo(c.getNom());
+ 	    	collegueToAdd.setScore(800);
  	    	if(c.getPhoto() == null) {
  	    		collegueToAdd.setphotoUrl(result[0].getPhoto());
  	    	}else {
