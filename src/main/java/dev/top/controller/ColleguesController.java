@@ -45,8 +45,12 @@ public class ColleguesController {
     @PostMapping
     public void  AjoutCollegue(@RequestBody CollegueDTO c)  {
    
-    	   
-    	collegueService.save(utils.recupDonne(c));
+    	Collegue col = collegueService.findByPseudo(c.getNom());
+    
+    	if(col.getId() == null) {
+    		collegueService.save(utils.recupDonne(c));
+    	}
+    
     }
     	    		
 }

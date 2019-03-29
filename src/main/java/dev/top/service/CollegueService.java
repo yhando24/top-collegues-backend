@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import dev.top.controller.Avis;
+import dev.top.controller.CollegueException;
 import dev.top.controller.VoteWeb;
 import dev.top.entities.Collegue;
 import dev.top.repos.CollegueRepo;
@@ -37,7 +38,12 @@ public class CollegueService {
     public List<Collegue> findAll() {
         return collegueRepo.findAll();
     }
-
+    
+    
+    public Collegue findByPseudo(String pseudo) {
+        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Une personne avec ce pseudo existe deja en base"));
+    
+    }
     @Transactional
     public Collegue setActionToCollegue(String pseudo, Avis action) {
         Collegue c = collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new RuntimeException("ddd"));
