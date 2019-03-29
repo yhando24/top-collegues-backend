@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import dev.top.entities.Collegue;
 import dev.top.service.CollegueService;
@@ -41,11 +43,15 @@ public class ColleguesController {
     }
     
     @PostMapping
-    public CollegueDTO AjoutCollegue(@RequestBody CollegueDTO c) {
-		return c;
-    	
+    public void  AjoutCollegue(@RequestBody CollegueDTO c)  {
+   
+    	   
+    	collegueService.save(utils.recupDonne(c));
     }
-
-
-
+    	    		
 }
+  	
+    
+
+
+

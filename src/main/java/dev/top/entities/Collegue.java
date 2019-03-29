@@ -30,10 +30,25 @@ public class Collegue {
         this.pseudo = pseudo;    
         
        }
+    
+   public Collegue(String photo, String pseudo) {
+        
+    
+        this.score = 800;
+        this.photoUrl = photo;
+        this.pseudo = pseudo;    
+        
+       }
 
        public Collegue() {
     }
-    /**
+    public Collegue(String nom) {
+		// TODO Auto-generated constructor stub
+    	  this.score = 800;
+    	   this.pseudo = nom;    
+	}
+
+	/**
      * @return the id
      */
     public Integer getId() {
@@ -88,4 +103,11 @@ public class Collegue {
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
     }
+
+	@Override
+	public String toString() {
+		return "Collegue [id=" + id + ", pseudo=" + pseudo + ", score=" + score + ", photoUrl=" + photoUrl + "]";
+	}
+    
+    
 }
