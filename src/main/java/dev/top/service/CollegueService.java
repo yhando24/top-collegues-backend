@@ -41,7 +41,7 @@ public class CollegueService {
     
     
     public Collegue findByPseudo(String pseudo) {
-        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Une personne avec ce pseudo existe deja en base"));
+        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Personne n'existe dans la base avec ce pseudo"));
     
     }
     @Transactional
