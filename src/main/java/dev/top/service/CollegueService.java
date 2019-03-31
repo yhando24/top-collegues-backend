@@ -41,7 +41,7 @@ public class CollegueService {
     
     
     public Collegue findByPseudo(String pseudo) {
-        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Personne n'existe dans la base avec "));
+        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Personne n'existe dans la base avec ce pseudo "));
     
     }
     @Transactional
@@ -58,5 +58,10 @@ public class CollegueService {
  
         return c;
     }
+
+
+	public Collegue findByMatricule(String matricule) {
+	      return collegueRepo.findByMatricule(matricule).orElseThrow(() -> new CollegueException("Personne n'existe dans la base avec ce matricule "));
+	}
   
 }

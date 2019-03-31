@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -36,6 +36,24 @@ public class ColleguesController {
     public List<Collegue> findAll() {
         return this.collegueService.findAll();
     }
+    
+    @GetMapping(value = "/{matricule}")
+    public boolean verifMatricule(@PathVariable String matricule){
+    
+    	boolean exist = true;
+    	Collegue col = new Collegue();
+    	try {
+    		col = this.collegueService.findByMatricule(matricule);
+    		System.out.println("il existe");
+    	}catch(CollegueException e) {
+    		exist = false;
+    		System.out.println("il n'existe pas");
+    	}
+   
+    	return exist;
+    		
+    	
+    }
 
     @PatchMapping(value = "/{pseudo}")
     public Collegue voter(@PathVariable String pseudo, @RequestBody VoteWeb action){
@@ -44,8 +62,8 @@ public class ColleguesController {
     
     @PostMapping
     public void  AjoutCollegue(@RequestBody CollegueDTO c)  {
-   
-    	System.out.println(c.getNom());
+    	System.out.println(c.getMatricule() +" 1111111111111111111111111");
+    	System.out.println(c.getMatricule() +" LAAAAAAAAAAAAAAAAAAAAAAAAAA");
     	boolean exist = true;
     	Collegue col = new Collegue();
     	try {
@@ -55,7 +73,7 @@ public class ColleguesController {
     	}
    
     	if(!exist) {
-    		
+    	
     		collegueService.save(utils.recupDonne(c));
     		
     	}else {
@@ -63,6 +81,8 @@ public class ColleguesController {
     	}
     	
     }
+    
+ 
     	    		
 }
   	

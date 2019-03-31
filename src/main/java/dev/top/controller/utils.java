@@ -20,6 +20,7 @@ public class utils {
  	    	   
  	    	collegueToAdd.setPseudo(c.getNom());
  	    	collegueToAdd.setScore(800);
+ 	    	collegueToAdd.setMatricule(c.getMatricule());
  	    	if(c.getPhoto() == null) {
  	    		collegueToAdd.setphotoUrl(result[0].getPhoto());
  	    	}else {

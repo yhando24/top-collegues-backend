@@ -27,8 +27,8 @@ public class StartupDataInit {
         this.versionRepo.save(new Version("v2"));
         this.versionRepo.save(new Version("v3"));
         this.versionRepo.save(new Version("v5"));
-        this.collegueRepo.save(new Collegue(1,200,"https://media.licdn.com/dms/image/C4E03AQFlHrZpdWLrCg/profile-displayphoto-shrink_200_200/0?e=1559174400&v=beta&t=x_w8Y3288kZDjGLS-Yhs9TTQpy25iOBynGdwhZga69A","youcef"));
-        this.collegueRepo.save(new Collegue(2, 200, "https://media.licdn.com/dms/image/C4D03AQGbtRrqkhoGCA/profile-displayphoto-shrink_800_800/0?e=1559174400&v=beta&t=M9y5GcnnnFNfSst9CUZsB8ZLmuFaiYtamA-psGaeDWI", "yoann"));
+        this.collegueRepo.save(new Collegue(1,200,"https://media.licdn.com/dms/image/C4E03AQFlHrZpdWLrCg/profile-displayphoto-shrink_200_200/0?e=1559174400&v=beta&t=x_w8Y3288kZDjGLS-Yhs9TTQpy25iOBynGdwhZga69A","youcef", "8b2d3ac7"));
+        this.collegueRepo.save(new Collegue(2, 200, "https://media.licdn.com/dms/image/C4D03AQGbtRrqkhoGCA/profile-displayphoto-shrink_800_800/0?e=1559174400&v=beta&t=M9y5GcnnnFNfSst9CUZsB8ZLmuFaiYtamA-psGaeDWI", "yoann", "6c8be60e"));
 
     }
 }

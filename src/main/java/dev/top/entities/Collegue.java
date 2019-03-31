@@ -19,15 +19,26 @@ public class Collegue {
     private Integer score;
 
     private String photoUrl;
+    
+    private String matricule;
 
 
 
-    public Collegue(Integer id, Integer score, String photo, String pseudo) {
+    public String getMatricule() {
+		return matricule;
+	}
+
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
+	}
+
+	public Collegue(Integer id, Integer score, String photo, String pseudo, String matricule) {
         
         this.id = id;
         this.score = score;
         this.photoUrl = photo;
-        this.pseudo = pseudo;    
+        this.pseudo = pseudo;
+        this.matricule = matricule;
         
        }
     

@@ -23,8 +23,11 @@ public interface CollegueRepo extends JpaRepository<Collegue, Long> {
 	public Optional<Collegue> findById(Long id);
 	
 	public Optional<Collegue> findByPseudo(String pseudo);
+	public Optional<Collegue> findByMatricule(String matricule);
 
 	public List<Collegue> findAll();
+	
+	
 
 
 }
