@@ -37,7 +37,7 @@ public class ColleguesController {
         return this.collegueService.findAll();
     }
     
-    @GetMapping(value = "/{matricule}")
+    @GetMapping("/{matricule}")
     public boolean verifMatricule(@PathVariable String matricule){
     
     	boolean exist = true;
@@ -62,25 +62,16 @@ public class ColleguesController {
     
     @PostMapping
     public void  AjoutCollegue(@RequestBody CollegueDTO c)  {
-    	System.out.println(c.getMatricule() +" 1111111111111111111111111");
-    	System.out.println(c.getMatricule() +" LAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    	boolean exist = true;
-    	Collegue col = new Collegue();
-    	try {
-    		col = collegueService.findByPseudo(c.getNom());
-    	}catch(CollegueException e) {
-    		exist = false;
-    	}
-   
-    	if(!exist) {
-    	
-    		collegueService.save(utils.recupDonne(c));
-    		
-    	}else {
-    	 throw new CollegueException("Une personne avec ce pseudo existe deja");
-    	}
-    	
+    
+    		 collegueService.save(utils.recupDonne(c));
+
+	
     }
+    @GetMapping(params = "pseudo")
+     public Collegue findByPseudo(@RequestParam String pseudo) {
+    	System.out.println(pseudo + "lA :::::::");
+     return this.collegueService.findByPseudo(pseudo);
+     }
     
  
     	    		

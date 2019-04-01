@@ -7,6 +7,36 @@ public class CollegueDTO {
 	 private String nom;
 
 	 private String photo;
+	 
+	 private String prenom;
+	 
+	 private String email;
+	 
+	 public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAdresse() {
+		return Adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		Adresse = adresse;
+	}
+
+	private String Adresse;
 
 	public String getMatricule() {
 		return matricule;

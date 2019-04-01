@@ -17,14 +17,17 @@ public class utils {
  	    if(result.length==0) {
  	    throw new CollegueException("Personne ne possede ce matricule");
  	    }else {
- 	    	   
+ 	    	
+ 	    	collegueToAdd.setAdresse(c.getAdresse());
+ 	    	collegueToAdd.setEmail(c.getEmail());
+ 	    	collegueToAdd.setPrenom(c.getPrenom());
  	    	collegueToAdd.setPseudo(c.getNom());
  	    	collegueToAdd.setScore(800);
  	    	collegueToAdd.setMatricule(c.getMatricule());
  	    	if(c.getPhoto() == null) {
- 	    		collegueToAdd.setphotoUrl(result[0].getPhoto());
+ 	    		collegueToAdd.setphoto(result[0].getPhoto());
  	    	}else {
- 	    		collegueToAdd.setphotoUrl(c.getPhoto());
+ 	    		collegueToAdd.setphoto(c.getPhoto());
  	    	}
 		
  	    }

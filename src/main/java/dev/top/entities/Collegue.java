@@ -18,11 +18,39 @@ public class Collegue {
     private String pseudo;
     private Integer score;
 
-    private String photoUrl;
+    private String photo;
     
     private String matricule;
 
+	 private String prenom;
+	 
+	 private String email;
+	 
+	 public String getPrenom() {
+		return prenom;
+	}
 
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAdresse() {
+		return Adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		Adresse = adresse;
+	}
+
+	private String Adresse;
 
     public String getMatricule() {
 		return matricule;
@@ -32,13 +60,16 @@ public class Collegue {
 		this.matricule = matricule;
 	}
 
-	public Collegue(Integer id, Integer score, String photo, String pseudo, String matricule) {
+	public Collegue(Integer id, Integer score, String photo, String pseudo, String matricule, String prenom, String email, String Adresse) {
         
         this.id = id;
         this.score = score;
-        this.photoUrl = photo;
+        this.photo = photo;
         this.pseudo = pseudo;
         this.matricule = matricule;
+        this.prenom = prenom;
+        this.email = email;
+        this.Adresse = Adresse;
         
        }
     
@@ -46,7 +77,7 @@ public class Collegue {
         
     
         this.score = 800;
-        this.photoUrl = photo;
+        this.photo = photo;
         this.pseudo = pseudo;    
         
        }
@@ -90,15 +121,15 @@ public class Collegue {
     /**
      * @return the photo
      */
-    public String getphotoUrl() {
-        return photoUrl;
+    public String getphoto() {
+        return photo;
     }
 
     /**
      * @param photo the photo to set
      */
-    public void setphotoUrl(String photo) {
-        this.photoUrl = photo;
+    public void setphoto(String photo) {
+        this.photo = photo;
     }
 
     /**
@@ -117,7 +148,7 @@ public class Collegue {
 
 	@Override
 	public String toString() {
-		return "Collegue [id=" + id + ", pseudo=" + pseudo + ", score=" + score + ", photoUrl=" + photoUrl + "]";
+		return "Collegue [id=" + id + ", pseudo=" + pseudo + ", score=" + score + ", photoUrl=" + photo + "]";
 	}
     
     

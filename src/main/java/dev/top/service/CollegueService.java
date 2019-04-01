@@ -23,14 +23,15 @@ public class CollegueService {
         this.collegueRepo = collegueRepo;
     }
 
-
     public Collegue save(Collegue collegue){
-        collegueRepo.save(collegue);
+    	if(this.collegueRepo.findByPseudo(collegue.getPseudo()).isPresent()){
+            throw new CollegueException("le pseudo " + collegue.getPseudo() + " est deja existant");
+        }else {
+            collegueRepo.save(collegue);
+        }   
         return collegue;
     }
 
-
-    
     public Optional<Collegue> findById(Long id) {
         return collegueRepo.findById(id);
     }
@@ -39,11 +40,10 @@ public class CollegueService {
         return collegueRepo.findAll();
     }
     
-    
     public Collegue findByPseudo(String pseudo) {
-        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Personne n'existe dans la base avec ce pseudo "));
-    
+        return collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new CollegueException("Personne ne posséde ce pseudo"));
     }
+    
     @Transactional
     public Collegue setActionToCollegue(String pseudo, Avis action) {
         Collegue c = collegueRepo.findByPseudo(pseudo).orElseThrow(() -> new RuntimeException("ddd"));
